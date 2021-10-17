@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: katharinahammerschmidt <katharinahammer    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 14:50:22 by khammers          #+#    #+#             */
-/*   Updated: 2021/08/26 14:50:33 by khammers         ###   ########.fr       */
+/*   Updated: 2021/10/17 21:08:08 by katharinaha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
+/* Function returns the length of a string. */
 size_t	ft_strlen(const char *s)
 {
 	int	len;
@@ -24,6 +25,7 @@ size_t	ft_strlen(const char *s)
 	return (len);
 }
 
+/* Function searches for the first occurence of 'c'. */
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
@@ -39,6 +41,7 @@ char	*ft_strchr(const char *s, int c)
 		return (NULL);
 }
 
+/* Function appends one string onto another. */
 char	*ft_strnjoin(char *s1, char *s2, ssize_t bytes)
 {
 	char	*strnw;
@@ -64,6 +67,7 @@ char	*ft_strnjoin(char *s1, char *s2, ssize_t bytes)
 	return (strnw);
 }
 
+/* Function duplicates a string. */
 char	*ft_strdup(char *s1)
 {
 	char	*cpy;
@@ -81,6 +85,7 @@ char	*ft_strdup(char *s1)
 	return (cpy);
 }
 
+/* Function creates a substring of a specific length. */
 char	*ft_substr(char *s, unsigned int start, size_t len)
 {
 	char	*substr;

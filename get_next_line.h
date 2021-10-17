@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: katharinahammerschmidt <katharinahammer    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 12:01:47 by khammers          #+#    #+#             */
-/*   Updated: 2021/08/26 16:06:01 by khammers         ###   ########.fr       */
+/*   Updated: 2021/10/17 21:08:35 by katharinaha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+#define BUFFER_SIZE 1
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -20,6 +21,8 @@ char	*get_next_line(int fd);
 char	*ft_update_char_output(char **line, ssize_t bytes);
 char	*ft_get_output(char **line);
 void	ft_free(char **char_stat);
+
+/* Util functions */
 void	*ft_calloc(size_t count, size_t size);
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
