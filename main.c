@@ -6,14 +6,11 @@
 /*   By: katharinahammerschmidt <katharinahammer    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 21:10:50 by katharinaha       #+#    #+#             */
-/*   Updated: 2021/10/17 21:19:40 by katharinaha      ###   ########.fr       */
+/*   Updated: 2021/10/17 21:25:24 by katharinaha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <sys/types.h>
-#include <fcntl.h>
-#include <stdio.h>
 
 int	main(void)
 {

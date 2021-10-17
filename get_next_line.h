@@ -6,15 +6,18 @@
 /*   By: katharinahammerschmidt <katharinahammer    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 12:01:47 by khammers          #+#    #+#             */
-/*   Updated: 2021/10/17 21:19:52 by katharinaha      ###   ########.fr       */
+/*   Updated: 2021/10/17 21:25:31 by katharinaha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <unistd.h>
-# include <stdlib.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <stdio.h>
 
 char	*get_next_line(int fd);
 char	*ft_update_char_output(char **line, ssize_t bytes);
