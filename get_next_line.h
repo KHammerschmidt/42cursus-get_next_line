@@ -6,13 +6,12 @@
 /*   By: katharinahammerschmidt <katharinahammer    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 12:01:47 by khammers          #+#    #+#             */
-/*   Updated: 2021/10/17 21:08:35 by katharinaha      ###   ########.fr       */
+/*   Updated: 2021/10/17 21:19:52 by katharinaha      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-#define BUFFER_SIZE 1
 
 # include <unistd.h>
 # include <stdlib.h>
