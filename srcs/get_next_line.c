@@ -1,6 +1,32 @@
 #include "../header/get_next_line.h"
 
-/* Differentiates between 
+/* ft_calloc() allocates memory area and sets it to 0. */
+void	*ft_calloc(size_t count, size_t size)
+{
+	int		*ptr;
+	size_t	i;
+
+	i = 0;
+	ptr = malloc(count * size);
+	if (ptr == NULL)
+		return (0);
+	while (i < (count * size))
+	{
+		((char *)ptr)[i] = '\0';
+		i++;
+	}
+	return (ptr);
+}
+
+/* Function to free static char. */
+void	ft_free(char **char_stat)
+{
+	free(*char_stat);
+	*char_stat = NULL;
+}
+
+
+/* Differentiates between: 
 (1) bytes != 0: the end of the file is not reached yet which returns
 ft_get_output(). 
 (2) (*line == 0): nothing is saved into string 'line' and all variables
@@ -41,13 +67,9 @@ char	*ft_update_char_output(char **line, ssize_t bytes)
 	return (NULL);
 }
 
-/* (1) The function iterates through the static char 'line' until it's
-end or a newline character. 
-(2) A substring of the initial part of 'line' is created which will 
-be returned at the function's end.
-(3) Another substring 'temp' is created for the remains of 'line'.
-(4) Via a string duplication, content of 'temp' is saved in 'line'. 
-(5) Line is freed and then the previous remains are saved in it. 
+/* Iterates through initial portion of the string and returns a substring
+of this portion until a newline or EOF is found. A substring of remaining
+part of the read line is saved in static variable.
 */
 char	*ft_get_output(char **line)
 {
@@ -71,16 +93,10 @@ char	*ft_get_output(char **line)
 	return (print);
 }
 
-/* (1) Testing if file descriptor is readable and allocating memory space for the
-string buffer, depending on the BUFFER_SIZE which can manually be set. 
-(2) To enter the while loop, set bytes to 1 and continue in the loop until the 
-string line consists of a newline character. 
-(2a) The function read, saves the read content automatically in buffer, which is 
-set to 0 at it's end. 
-(2b) The read content is saved in the string 'line' by joining line and buffer, 
-appending every newly read byte whenever the while loop restarts.
-(3) When a newline character is found, the function breaks out of the while loop,
-frees the buffer and returns the read output. */
+/* Preliminary tests if fd is valid and call read() until newline or EOF is 
+read, joining read buffer and line after each read() call. Calling 
+ft_update_char_output() to print read line and save remaining content.
+*/
 char	*get_next_line(int fd)
 {
 	static char	*line;

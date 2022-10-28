@@ -21,11 +21,9 @@ SDIR			:= 		srcs/
 ODIR			:=		obj/
 DDIR			:=		$(ODIR)deps/
 
-LIBFT_DIR		:=		Libft/
-LDLIBS			:=		$(LIBFT_DIR)libft.a
-
 SRCS			:=		main.c								\
-						get_next_line.c
+						get_next_line.c						\
+						get_next_line_utils.c
 
 OBJS			:=		$(SRCS:%.c=$(ODIR)%.o)
 DEPS			:=		$(SRCS:%.c=$(DDIR)%.d)
@@ -40,9 +38,7 @@ DEPS			:=		$(SRCS:%.c=$(DDIR)%.d)
 all: $(NAME)
 
 $(NAME): $(ODIR) $(DDIR) $(DEPS) $(OBJS)
-	@make -C $(LIBFT_DIR)
-	@echo "$(OBJ_COLOR)...compiling libft.a"
-	@ $(CC) $(CFLAGS) $(CPPFLAGS) $(DEPFLAGS) $(OBJS) -o $@ $(LDLIBS)
+	@ $(CC) $(CFLAGS) $(CPPFLAGS) $(DEPFLAGS) $(OBJS) -o $@ 
 	@echo "$(COM_COLOR)...creating: $(NAME)"
 
 $(ODIR):
@@ -58,7 +54,6 @@ $(ODIR)%.o: $(SDIR)%.c $(DDIR)%.d
 
 clean:
 	@rm -rf $(OBJS) $(ODIR) $(DDIR)
-	@make clean -C $(LIBFT_DIR)
 	@echo "$(ERROR_COLOR)...$(NAME)-object files deleted"
 
 fclean: clean

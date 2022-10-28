@@ -28,7 +28,7 @@
 
 
 ## 💡 About the project
-> Write a project with maximum of 10 functions under the 42 norminette restrictions, that reads one line from a file descriptor with varying BUFFER_SIZE. Thereby, only one line should be returned and any remains after the newline should be saved for a repetitive function call.[^1]
+> Write a project with maximum of 10 functions under the 42 norminette restrictions, that reads one line from a file descriptor with varying BUFFER_SIZE. Thereby, only one line should be returned and any remains after the newline should be saved for a repetitive function call.
 </br>
 
 **Requirements** </br>
@@ -60,6 +60,3 @@ Project Libft with standard library functions required in root.
 
 
 ---
-
-[^1]: This repo does not pass the initial moulinette tests of get_next_line at École 42 as all utility functions of the project are embedded within [`Libft`](./Libft).
-

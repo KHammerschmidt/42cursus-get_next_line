@@ -1,6 +1,0 @@
-[submodule "42cursus-Libft"]
-	path = 42cursus-Libft
-	url = https://github.com/KHammerschmidt/42cursus-Libft
-[submodule "Libft"]
-	path = Libft
-	url = https://github.com/KHammerschmidt/42cursus-Libft
