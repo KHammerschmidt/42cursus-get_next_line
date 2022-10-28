@@ -14,10 +14,10 @@
 </p>
 
 <p align="center">
-	<img alt="Github code size in bytes" src="https://img.shields.io/github/languages/code-size/KHammerschmidt/42cursus-ft_printf"/>
-	<img alt="Github repo size" src="https://img.shields.io/github/repo-size/KHammerschmidt/42cursus-ft_printf?color=orange"/>
-	<img alt="Languages used in repo" src="https://img.shields.io/github/languages/count/KHammerschmidt/42cursus-ft_printf?color=red&label=languages%20used%20in%20repo"/>
-	<img alt="Top used progamming language" src="https://img.shields.io/github/languages/top/KHammerschmidt/42cursus-ft_printf?color=yellow"/>	
+	<img alt="Github repo size" src="https://img.shields.io/github/repo-size/KHammerschmidt/42cursus-get_next_line?color=red"/>
+	<img alt="Number of lines in code" src="https://img.shields.io/tokei/lines/github/KHammerschmidt/42cursus-get_next_line?color=blueviolet"/>
+	<img alt="Languages used in repo" src="https://img.shields.io/github/languages/count/KHammerschmidt/42cursus-get_next_line?color=silver"/>
+	<img alt="Top used progamming language" src="https://img.shields.io/github/languages/top/KHammerschmidt/42cursus-get_next_line?color=gold"/>	
 </p>
 
 <h3 align="center">
@@ -28,24 +28,17 @@
 
 
 ## 💡 About the project
-> Write a project with maximum of 10 functions under the 42 norminette restrictions, that reads one line from a file descriptor with varying BUFFER_SIZE. Thereby, only one line should be returned and any remains after the newline should be saved for a repetitive function call.[^1]
+> Write a project with maximum of 10 functions under the 42 norminette restrictions, that reads one line from a file descriptor with varying buffer size. Thereby, only one line should be returned and any remains after the newline should be saved for the next time get_next_line() is called.[^1]
 </br>
 
 **Requirements** </br>
-• Repeated calls (e.g., using a loop) to your get_next_line() function should let you read the text file pointed to by the file descriptor, one line at a time.
-• Your function should return the line that was read. If there is nothing else to read or if an error occurred, it should return NULL.
-• Make sure that your function works as expected both when reading a file and when reading from the standard input.
-• Please note that the returned line should include the terminating \n character, except if the end of file was reached and does not end with a \n character.
-• lseek() is forbidden.
-• Global variables are forbidden.
-
-• You will compile your code as follows (a buffer size of 42 is used as an example): cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 <files>.c
-• We consider that get_next_line() has an undefined behavior if the file pointed to by the file descriptor changed since the last call whereas read() didn’t reach the end of file.
-• We also consider that get_next_line() has an undefined behavior when reading a binary file. However, you can implement a logical way to handle this behavior if you want to.
-
-• Because you will have to read files in get_next_line(), add this option to your compiler call: -D BUFFER_SIZE=n
-It will define the buffer size for read().
-The buffer size value will be modified by your peer-evaluators and the Moulinette in order to test your code.
+- Repeated calls (e.g., using a loop) to your get_next_line() function should let you read the text file pointed to by the file descriptor, one line at a time.</br>
+- Your function should return the line that was read. If there is nothing else to read or if an error occurred, it should return NULL.</br>
+- Make sure that your function works as expected both when reading a file and when reading from the standard input.</br>
+- Please note that the returned line should include the terminating \n character, except if the end of file was reached and does not end with a \n character.</br>
+- lseek() is forbidden.</br>
+- Global variables are forbidden.</br>
+</br>
 
 **Key learning points**
   - Learning about file descriptors and reading from a file
@@ -53,10 +46,12 @@ The buffer size value will be modified by your peer-evaluators and the Moulinett
 </br>
 
 ## 🛠️ **Usage**
-To compile the project use the command ``` make ``` <br/>
-To change the BUFFER_SIZE of read() adapt the BUFFER_SIZE value n in [`Makefile`](./Makefile)
-``` CPPFLAGS		:=		-D BUFFER_SIZE=n ```
+Compile the project with command ``` make ``` <br/>
+To modify the buffer size used by read() adapt the BUFFER_SIZE value n in 
+[`Makefile`](./Makefile) ``` CPPFLAGS	:= -D BUFFER_SIZE=n ``` </br>
 Project Libft with standard library functions required in root.
+</br>
+
 
 
 ---
