@@ -1,41 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: katharinahammerschmidt <katharinahammer    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 13:26:11 by khammers          #+#    #+#             */
-/*   Updated: 2021/10/17 21:07:34 by katharinaha      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "get_next_line.h"
-
-/* ft_calloc() allocates memory area and sets it to 0. */
-void	*ft_calloc(size_t count, size_t size)
-{
-	int		*ptr;
-	size_t	i;
-
-	i = 0;
-	ptr = malloc(count * size);
-	if (ptr == NULL)
-		return (0);
-	while (i < (count * size))
-	{
-		((char *)ptr)[i] = '\0';
-		i++;
-	}
-	return (ptr);
-}
-
-/* Function to free static char. */
-void	ft_free(char **char_stat)
-{
-	free(*char_stat);
-	*char_stat = NULL;
-}
+#include "../header/get_next_line.h"
 
 /* Differentiates between 
 (1) bytes != 0: the end of the file is not reached yet which returns
